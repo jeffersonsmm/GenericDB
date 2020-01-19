@@ -1,4 +1,7 @@
-<?php include 'Includes/header.php' ?>
+<?php
+include 'Includes/header.php';
+include 'Class/ClassCrud.php'
+?>
 
     <div class="Content">
         <table class="TabelaCrud">
@@ -11,8 +14,8 @@
 
             <!-- Estrutura de loop -->
             <?php
-            $Crud=new ClassCrud();
-            $BFetch=$Crud->selectDB(
+            $Crud = new ClassCrud();
+            $BFetch = $Crud->selectDB(
                 "*",
                 "cadastro",
                 "",
@@ -26,14 +29,13 @@
                     <td><?php echo $Fetch['Sexo']; ?></td>
                     <td><?php echo $Fetch['Cidade']; ?></td>
                     <td>
-                        <a href="visualizar.php"><img src="IMG/Visualizar.png" alt="Visualizar"></a>
-                        <a href="atualizacao.php"><img src="IMG/Editar.png" alt="Editar"></a>
-                        <a href="delete.php"><img src="IMG/Lixeira.png" alt="Deletar"></a>
+                        <a href="<?php echo "./visualizar.php?id={$Fetch['Id']}"; ?>"><img src="img/Visualizar.png" alt="Visualizar"></a>
+                        <a href="<?php echo "./atualizacao.php?id={$Fetch['Id']}"; ?>"><img src="img/Editar.png" alt="Editar"></a>
+                        <a class="Deletar" href="<?php echo "Controllers/controllerDeletar.php?id={$Fetch['Id']}"; ?>"><img src="img/Lixeira.png" alt="Deletar"></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
-
     </div>
 
 <?php include 'Includes/footer.php' ?>

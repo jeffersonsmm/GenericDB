@@ -1,7 +1,8 @@
+<div class="Resultado"></div>
 <div class="Formulario">
     <h1 class="Center">Cadastro</h1>
 
-    <form name="FormCadastro" id="FormCadastro" method="post" action="../Controllers/controllerCadastro.php">
+    <form name="FormCadastro" id="FormCadastro" method="post" action="./Controllers/controllerCadastro.php">
         <div class="FormularioInput">
             Nome: <br>
             <input type="text" id="Nome" name="Nome">

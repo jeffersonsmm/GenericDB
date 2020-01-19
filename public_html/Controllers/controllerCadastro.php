@@ -1,8 +1,8 @@
 <?php
-include("../Includes/variaveis.php");
-include("../Class/ClassCrud.php");
+include "../Includes/variaveis.php";
+include "../Class/ClassCrud.php";
 
-$Crud=new ClassCrud();
+$Crud = new ClassCrud();
 $Crud->insertDB(
     "cadastro",
     "?,?,?,?",

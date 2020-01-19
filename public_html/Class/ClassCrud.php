@@ -1,5 +1,5 @@
 <?php
-include "../DB/DataBase.php";
+include ("{$_SERVER['DOCUMENT_ROOT']}/xampp/GenericDB/public_html/DB/DataBase.php");
 
 class ClassCrud extends DataBase
 {
@@ -33,19 +33,19 @@ class ClassCrud extends DataBase
 
     #select
     public function selectDB($campo, $tabela, $condicao, $parametros){
-        $this->preparedStatements("select ($campo) from ($tabela) ($condicao)", $parametros);
+        $this->preparedStatements("select {$campo} from {$tabela} {$condicao}", $parametros);
         return $this->crud;
     }
 
     #delete
     public function deleteDB($tabela, $condicao, $parametros){
-        $this->preparedStatements("delete from ($tabela) where ($condicao)", $parametros);
+        $this->preparedStatements("delete from {$tabela} where {$condicao}", $parametros);
         return $this->crud;
     }
 
     #update
     public function updateDB($tabela, $set, $condicao, $parametros){
-        $this->preparedStatements("update ($tabela) set ($set) where ($condicao)", $parametros);
+        $this->preparedStatements("update {$tabela} set {$set} where {$condicao}", $parametros);
         return $this->crud;
     }
 }
